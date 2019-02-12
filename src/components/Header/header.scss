@@ -1,0 +1,32 @@
+$title-color: #788197;
+$border-color: #e4e6e9;
+
+.header {
+  margin: 25px 0 25px;
+  border-left: 10px solid #e4e6e9;
+}
+
+.title {
+  overflow: hidden; /* Линия, выходящая за пределы блока, будет скрыта */
+  padding-left: 16px; /* Отступ текста слева от границы блока */
+  text-align: left;
+  color: $title-color;
+
+  span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &:after {
+    /* Непосредственно стилизация линии */
+    content: '';
+    position: relative;
+    display: inline-block;
+    vertical-align: middle; /* Выравнивание линии по высоте - по центру */
+    margin-right: -100%; /* Смещение линии вправо, чтобы линия встала рядом с текстом справа */
+    right: -16px; /* Отступ линии от текста */
+    width: 100%;
+    height: 1px;
+    background-color: $border-color;
+  }
+}

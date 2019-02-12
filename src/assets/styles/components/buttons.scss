@@ -1,0 +1,29 @@
+.buttonAction {
+  @extend %btn;
+  @include btn-padding(medium);
+  @include btn-color($btn-default-color);
+}
+
+.buttonEdit {
+  @extend %btn;
+  @include btn-padding(medium);
+  @include btn-color($btn-edit-color);
+}
+
+.buttonSave {
+  @extend %btn;
+  @include btn-padding(medium);
+  @include btn-color($btn-save-color);
+}
+
+.buttonDelete {
+  @extend %btn;
+  @include btn-padding(medium);
+  @include btn-color($btn-delete-color);
+}
+
+.buttonCancel {
+  @extend %btn;
+  @include btn-padding(medium);
+  @include btn-color($btn-cancel-color);
+}

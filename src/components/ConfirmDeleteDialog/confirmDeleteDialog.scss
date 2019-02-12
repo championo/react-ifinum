@@ -1,0 +1,94 @@
+@import '../../assets/styles/main.scss';
+
+$text-important-color: #d43f3a;
+
+.backside {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(0, 0%, 0%, 0.7);
+  animation: show-modal .6s ease;
+}
+
+.box {
+  position: relative; /* Для расположения кнопки закрытия диалога */
+  width: 30%;
+  padding: 30px;
+  background-color: #fefefe;
+  border: 1px solid #888;
+  border-radius: 3px;
+  box-shadow: 0 0 15px hsla(0, 0%, 0%, 0.5);
+}
+
+.header, 
+.content {
+  margin-bottom: 10px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.close {
+  /* Линии располагаются по центру, что дает возможность их пересечь друг с другом */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  cursor: pointer;
+
+  width: 30px;
+  height: 30px;
+
+  border: none;
+  background-color: transparent;
+  opacity: 0.7;
+
+  &:hover, &:focus {
+    opacity: 1;
+  }
+
+  /* 2 горизонтальные линии, которые надо пересечь между собой */
+  &:before, &:after {
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 2px;
+    background-color: #000;
+  }
+
+  /* Поворот линии из положения '-' в '/' */
+  &:before {
+    transform: rotate(-45deg);
+  }
+
+  /* Поворот линии из положения '-' в '\' */
+  &:after {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes show-modal {
+  from {
+    opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+.importantText {
+  color: $text-important-color;
+  border-bottom: 2px dotted $text-important-color;
+}

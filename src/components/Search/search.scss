@@ -1,0 +1,59 @@
+@import '../../assets/styles/main.scss';
+
+$btn-clear-color: #999;
+$btn-clear-hover-color: #4973ff;
+$btn-clear-size: 30px;
+
+$btn-clear-text-size: 18px;
+$btn-clear-text-hover-size: 20px;
+
+.textBox {
+  position: relative; /* Для расположения кнопки закрытия диалога */
+  
+  display: flex;
+  align-items: center;
+   
+  min-width: 300px;
+  margin-left: auto;
+  
+  background-color: $input-bg-color;
+  border: 1px solid $input-brd-color;
+  border-radius: 3px;
+}
+
+.text {
+  position: relative;
+  padding: 7px 0 7px 10px;
+  width: 100%;
+
+  color: $input-text-color;
+  font-size: $input-text-size;
+  border: none;
+  background-color: transparent;
+}
+
+.clear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   
+  background: none;
+  border: none;
+  
+  font-size: $btn-clear-text-size;
+  color: $btn-clear-color;
+  
+  width: $btn-clear-size;
+  height: $btn-clear-size;
+   
+  cursor: pointer;
+
+  &:hover {
+    font-size: $btn-clear-text-hover-size;
+    color: $btn-clear-hover-color;
+  }
+}
+
+.none {
+  display: none;
+}

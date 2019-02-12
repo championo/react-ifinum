@@ -1,0 +1,30 @@
+@import '../../assets/styles/main.scss';
+
+.form {
+  margin-bottom: 15px;
+}
+
+.verticalGroup {
+  @include controls-group(vertical, 15px);
+
+  label {
+    margin-bottom: 5px;
+  }
+
+  input, textarea {
+    display: block;
+
+    padding: 5px;
+
+    color: $input-text-color;
+    font-size: $input-text-size;
+
+    background-color: $input-bg-color;
+    border: 1px solid $input-brd-color;
+    border-radius: 3px;
+
+    &::placeholder {
+      color: $input-placeholder-color;
+    }
+  }
+}

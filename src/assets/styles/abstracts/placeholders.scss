@@ -1,0 +1,22 @@
+%btn {
+  color: $btn-text-color;
+  font-size: $btn-text-size;
+  font-family: $btn-default-font;
+  text-decoration: none;
+
+  border-radius: $btn-border-radius;
+
+  cursor: pointer;
+
+  &:not(:last-child) {
+    margin-right: 3px;
+  }
+
+  &.disabled,
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    pointer-events: none;
+    text-decoration: none;
+  }
+}

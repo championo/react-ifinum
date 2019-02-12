@@ -1,0 +1,17 @@
+$backgroundColor: #fff;
+$borderColor: #e9e9e9;
+$titleColor: #323232;
+
+.section {
+    padding: 20px;
+    margin-bottom: 25px;
+
+    background-color: $backgroundColor;
+    border: 1px solid $borderColor;
+}
+  
+.title {
+    margin-bottom: 15px;
+
+    color: $titleColor;
+}

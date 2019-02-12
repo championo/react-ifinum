@@ -1,0 +1,21 @@
+// Get
+export const GET_INVOICES = 'GET_INVOICES'
+
+// Create
+export const CREATE_INVOICE = 'CREATE_INVOICE'
+
+// Edit
+export const EDIT_INVOICE = 'EDIT_INVOICE'
+
+// Delete
+export const DELETE_INVOICE = 'DELETE_INVOICE'
+export const DELETE_SELECTED_INVOICES = 'DELETE_SELECTED_INVOICES'
+export const DELETE_ALL_INVOICES = 'DELETE_ALL_INVOICES'
+
+// Search
+export const CHANGE_SEARCH_STRING = 'CHANGE_SEARCH_STRING'
+export const CLEAR_SEARCH_STRING = 'CLEAR_SEARCH_STRING'
+
+// Notify
+export const HIDE_NOTIFY = 'HIDE_NOTIFY'
+export const SHOW_NOTIFY = 'SHOW_NOTIFY'

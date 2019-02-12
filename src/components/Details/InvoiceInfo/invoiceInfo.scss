@@ -1,0 +1,13 @@
+@import '../../../assets/styles/main.scss';
+
+.groupHorizontal {
+  @include controls-group(horizontal, 10px);
+
+  dt {
+    font-weight: 600;
+  }
+
+  dd {
+    margin-left: 10px;
+  }
+}

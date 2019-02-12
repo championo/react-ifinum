@@ -1,0 +1,43 @@
+
+// ТУДУ Указать цвет по умолчанию
+@mixin btn-color($color) {
+
+  background-color: $color;
+  border: 1px solid darken($color, 10%);
+
+  &:active {
+    background-color: darken($color, 10%);
+    border: 1px solid darken($color, 20%);
+    transition: all 0.3s ease;
+  }
+}
+
+@mixin btn-padding ($btnSize) {
+  @if $btnSize == small {
+    padding: 1px 4px
+  } @else if $btnSize == medium {
+    padding: 4px 6px
+  } @else if $btnSize == large {
+    padding: 6px 10px
+  }
+}
+
+@mixin controls-group($direction, $bottomIndentSize: 0) {
+  display: flex;
+  margin-bottom: $bottomIndentSize;
+
+  @if $direction == horizontal {
+    flex-direction: row;
+  } @else if $direction == vertical {
+    flex-direction: column;
+  }
+}
+
+@mixin link ($color) {
+  color: $color;
+  text-decoration: none;
+
+  &:hover {
+    border-bottom: 2px dotted $color;
+  }
+}

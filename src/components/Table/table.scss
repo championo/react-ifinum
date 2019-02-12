@@ -1,0 +1,54 @@
+@import '../../assets/styles/main.scss';
+
+$header-text-color: #778096;
+$body-text-color: #7c7c7c;
+$row-bg-color: #f1f3f6;
+$table-text-size: 16px;
+
+table {
+  background-color: transparent;
+  border-collapse: collapse;
+}
+
+thead {
+  color: $header-text-color; 
+}
+  
+tbody {
+  color: $body-text-color;
+}
+  
+th {
+  background-color: $row-bg-color;
+}
+  
+th, td {
+  padding: 5px;
+  vertical-align: middle;
+  text-align: left;
+  font-size: $table-text-size;
+}
+
+table th:first-child {
+  border-radius: 5px 0 0 0;
+}
+  
+table th:last-child {
+  border-radius: 0 5px 0 0;
+}
+
+.linkDetails {
+  @include link(#567dff);
+}
+
+.buttonEdit {
+  @extend %btn;
+  @include btn-padding(small);
+  @include btn-color($btn-edit-color);
+}
+
+.buttonDelete {
+  @extend %btn;
+  @include btn-padding(small);
+  @include btn-color($btn-delete-color);
+}

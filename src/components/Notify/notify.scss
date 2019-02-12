@@ -1,0 +1,121 @@
+// Цвет панели
+$panel-default-color: #777;
+$panel-info-color: #4772ff;
+$panel-success-color: #059d05;
+$panel-warning-color: #eebb2f;
+$panel-error-color: #ff7070;
+
+// Цвет сообщения, размер шрифта
+$message-сolor: #fff;
+$message-size: 24px;
+
+// Панель уведомлений - обычная полоса с цветом, нижней границей и тенью
+// Высота панели зависит от контента в ней
+%panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  width: 100%;
+
+  box-shadow: 0 1px 4px hsla(0, 0%, 0%, 0.5);
+  animation: show-panel .4s ease-in;
+}
+
+.default {
+  @extend %panel;
+  background-color: $panel-default-color;
+  border-bottom: 1px solid darken($panel-default-color, 5%);
+}
+
+.info {
+  @extend %panel;
+  background-color: $panel-info-color;
+  border-bottom: 1px solid darken($panel-info-color, 5%);
+}
+
+.success {
+  @extend %panel;
+  background-color: $panel-success-color;
+  border-bottom: 1px solid darken($panel-success-color, 5%);
+}
+
+.warning {
+  @extend %panel;
+  background-color: $panel-warning-color;
+  border-bottom: 1px solid darken($panel-warning-color, 5%);
+}
+
+.error {
+  @extend %panel;
+  background-color: $panel-error-color;
+  border-bottom: 1px solid darken($panel-error-color, 5%);
+}
+
+// Блок содержимого
+.content {
+  // Элементы панели располагаются в строку и выравниваются по центру вертикальной оси
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+
+  min-height: 50px; // При отсутствии содержимого панель не превратится ("не схлопнется") в тонкую полосу
+  
+  margin: 0 20px; // Отступы от боковых границ панели (кнопка "Закрыть" не будет прижата к краю окна)
+}
+
+// Текст уведомления
+.message {
+  width: 100%; // Элемент займет всю ширину родительского контейнера (это даст то, что кнопка "Закрыть" будет прижата вправо)
+
+  color: $message-сolor;
+  font-size: $message-size;
+  text-align: center;
+}
+
+// Кнопка закрыть
+.close {
+  // Линии располагаются по центру, что дает возможность их пересечь друг с другом
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  width: 30px;
+  height: 30px;
+  padding: 5px; // Немного расширим зону для щелчка по перекрестию (не надо точно выцеливать перекрестие - достаточно попасть рядом)
+  border: none;
+  opacity: 0.4;
+
+  &:hover, &:focus {
+    opacity: 0.6;
+  }
+
+  // 2 горизонтальные линии, которые надо пересечь между собой
+  &:before, &:after {
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 3px;
+    background-color: #000;
+  }
+    // Поворот линии из положения '-' в '/'
+  &:before {
+    transform: rotate(-45deg);
+  }
+    
+  // Поворот линии из положения '-' в '\'
+  &:after {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes show-panel {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
