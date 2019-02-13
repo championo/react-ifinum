@@ -114,3 +114,6 @@ npm start
 
 ## Обратная связь
 Буду рад слышать от вас замечания и рекомендации по проекту. Для связи со мной используйте telegram [https://t.me/championo](https://t.me/championo)
+
+# Исправленные ошибки
+* удалены вызовы console.log в reducer (@e_savkin)

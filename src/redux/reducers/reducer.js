@@ -11,11 +11,8 @@ export default function(state = {}, action) {
         return Object.assign({}, state, { invoices: state.invoices.concat(action.invoice) });
 
     case types.EDIT_INVOICE:
-      console.log('я в редьюсере EDIT_INVOICE');
-      console.log(action.invoice);
       return Object.assign({}, state, { invoices: state.invoices.map(invoice => {
             if (invoice.id === action.invoice.id) {
-                console.log('Найдено совпадение по id!')
                 invoice.number = action.invoice.number;
                 invoice.date_due = action.invoice.date_due;
                 invoice.date_supply = action.invoice.date_supply;
