@@ -17,8 +17,7 @@ export default function(state = {}, action) {
                 invoice.date_due = action.invoice.date_due;
                 invoice.date_supply = action.invoice.date_supply;
                 invoice.comment = action.invoice.comment;
-
-                return invoice;
+              //  return invoice; зачем 2 return подряд?
             }
             return invoice;
           }
